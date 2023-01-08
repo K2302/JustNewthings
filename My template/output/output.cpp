@@ -1,5 +1,6 @@
 #define print(x);  _kasu(x); cout << endl
 void     _kasu(int t) {cout << t;}
+void     _kasu(ll t){cout<<t;}
 void     _kasu(string t) {cout << t;}
 void     _kasu(char t) {cout << t;}
 void     _kasu(lld t) {cout << t;}

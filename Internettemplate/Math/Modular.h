@@ -1,5 +1,4 @@
-#pragma once
-#include <iostream>
+#define ll Modular<M>
 
 template <int MOD>
 class Modular {

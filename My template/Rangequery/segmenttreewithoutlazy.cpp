@@ -23,10 +23,6 @@ struct SegTree
      {
           return a + b;
      }
-     inline T merge1(T a, T b)
-     {
-          return a | b;
-     }
      void _build(int level, int start, int end, vector<T> &a)
      {
           if (start == end)

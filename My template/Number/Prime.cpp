@@ -1,3 +1,6 @@
+vector<int> primeFact(int n);
+vector<int> siv(1000001);
+
 vector<int> primeFact(int n)
 {
    vector<int>v;

@@ -4,9 +4,9 @@ struct modint {
   int64_t x;
 
   modint(const modint<M> &m) : x(m.x) {}
-  explicit modint(const int64_t _x) : x((_x >= 0 ? _x % M : M + (_x % (int) M))) {}
-  explicit modint(const int _x) : x((_x >= 0 ? _x % M : M + (_x % (int) M))) {}
-  explicit modint() : x(0) {}
+  modint(const int64_t _x) : x((_x >= 0 ? _x % M : M + (_x % (int) M))) {}
+  modint(const int _x) : x((_x >= 0 ? _x % M : M + (_x % (int) M))) {}
+   modint() : x(0) {}
 
  // [[nodiscard]]
    modint<M> invers() const {

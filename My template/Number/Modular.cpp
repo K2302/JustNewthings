@@ -7,7 +7,7 @@ struct modint {
   explicit modint(const int _x) : x((_x >= 0 ? _x % M : M + (_x % (int) M))) {}
   explicit modint() : x(0) {}
 
-  [[nodiscard]] modint<M> inv() const {
+  [[nodiscard]] modint<M> invers() const {
     return power(M - 2);
   }
 
@@ -59,7 +59,7 @@ struct modint {
   }
 
   modint<M> &operator/=(const modint<M> &other) {
-    x = (*this * other.inv()).x;
+    x = (*this * other.invers()).x;
     return *this;
   }
 

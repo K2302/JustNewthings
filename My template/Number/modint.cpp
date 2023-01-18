@@ -1,4 +1,4 @@
- const int kMod = 11;
+ const int kMod = 9;
 template<unsigned int M>
 struct modint {
   int64_t x;
@@ -124,3 +124,4 @@ struct modint {
     return result;
   }
 };
+//remove int long long;

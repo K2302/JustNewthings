@@ -1,33 +1,33 @@
-int tail = 0;
-int head = 1;
-while (tail < n)
-    {   
-        while ((head + 1 < n) && (mp[arr[head + 1]]>0 || cnt + 1 <= k))
-        {
-            head++;
-            //cout<<mp[arr[head]]<<" ";
-//             mp[arr[head]]++;
-//             if (mp[arr[head]] == 1)
-//                 cnt++;
-        }
-        // update ans for [tail to head]
-        int x = (head - tail + 1);
-        ans += x; 
- 
-        if (tail <= head)
-        { 
-          // for a non empty window
-          //Condition can change
-          //delete the last element
-            mp[arr[tail]]--;
-            if(mp[arr[tail]]==0){
-                cnt--;
-            }
-            tail++;
-        }
-        else
-        {//for empty subarray
-            tail++;
-            head = tail - 1;
-        }
-    }
+int ans = 0;
+	// two pointers
+	int head=-1,tail=0;
+	// maintaining property
+	int count0 = 0;
+
+	while(tail<n){ // while start < n
+		// process this start index.
+		
+		while( head+1<n && (count0 + (arr[head+1]==0?1:0) )<= k){ 
+			// we can take more elements
+			// if the next element exists and by taking it, we are not exceeding the limit of k 0's
+			head++;
+			if(arr[head]==0){
+				count0++;
+			}
+		}
+		// [tail... head] we can take... tail -> head.
+		// process answer for this window
+		ans = max(ans,(head-tail+1));
+		
+		// move tail one step
+		if(head<tail){ // .....[1]
+			// edge case.
+			tail++;
+			head=tail-1;
+		}else{
+			// normal
+			if(arr[tail]==0)count0--;
+			tail++;
+		}
+	}
+	cout<<ans<<endl;

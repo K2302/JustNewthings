@@ -1,4 +1,6 @@
-    while (tail < n)
+int tail = 0;
+int head = 1;
+while (tail < n)
     {   
         while ((head + 1 < n) && (mp[arr[head + 1]]>0 || cnt + 1 <= k))
         {
